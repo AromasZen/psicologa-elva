@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lic. Elva Beatriz Schweizer — Psicóloga Clínica | Rosario, Argentina</title>
+    <meta name="description"
+        content="Lic. Elva Beatriz Schweizer, Psicóloga Clínica en Rosario (Mat. 3689). Especialista en ansiedad, depresión, ataques de pánico y duelo. Atención presencial en Av. Arijon 2050 y videoconsultas online. Solicitá tu consulta hoy.">
+    <meta name="keywords" content="psicóloga Rosario, terapia online Rosario, ansiedad, ataques de pánico, depresión, duelo, baja autoestima, psicología clínica Rosario, pericias psicológicas, videoconsulta psicóloga">
+    <meta name="author" content="Lic. Elva Beatriz Schweizer">
+    <meta property="og:title" content="Lic. Elva Beatriz Schweizer — Psicóloga Clínica | Rosario">
+    <meta property="og:description" content="Psicóloga Clínica en Rosario. Atención presencial y online. Escucha activa, acompañamiento empático y bienestar emocional. Solicitá tu consulta.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar glass-nav" role="navigation" aria-label="Navegación principal">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-text">Lic. Elva Schweizer</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#especialidades">Especialidades</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#precios">Honorarios</a>
+                <a href="#contacto" class="btn btn-outline">Contacto</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero container" id="inicio">
+        <div class="hero-content fade-in">
+            <span class="pre-title">Lic. Elva Beatriz Schweizer &middot; Mat. Prov. 3689</span>
+            <h1>Un espacio seguro para encontrarte con vos misma/o.</h1>
+            <p class="subtitle">Psicóloga Clínica en Rosario. Acompañamiento empático, escucha real y construcción
+                conjunta de tu bienestar. Atención presencial y online.</p>
+            <div class="hero-actions">
+                <div class="btn-row">
+                    <button type="button" class="btn btn-accent fade-up" onclick="openBookingModal()" id="cta-hero-principal">
+                        <i class="fas fa-calendar-check"></i> Solicitar consulta
+                    </button>
+                    <a href="#modalidades" class="btn btn-secondary fade-up" style="transition-delay:100ms;" id="cta-hero-secundario">
+                        <i class="fas fa-video"></i> Presencial &amp; Online
+                    </a>
+                </div>
+                <p class="support-text">Rosario &middot; Av. Arijon 2050 &middot; También por videoconsulta</p>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item glass-card">
+                    <i class="fas fa-heart-pulse"></i>
+                    <span>Psicología Clínica</span>
+                </div>
+                <div class="stat-item glass-card">
+                    <i class="fas fa-user-group"></i>
+                    <span>Adultos &amp; Niños</span>
+                </div>
+                <div class="stat-item glass-card">
+                    <i class="fas fa-laptop-medical"></i>
+                    <span>Presencial &amp; Online</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-wrapper fade-in" style="transition-delay: 200ms;">
+            <div class="image-glass-frame">
+                <img src="assets/hero.png" alt="Lic. Elva Beatriz Schweizer, Psicóloga Clínica en Rosario" class="hero-image">
+            </div>
+        </div>
+    </header>
+
+    <!-- Sobre Mí -->
+    <section class="about container section-padding" id="sobre-mi" aria-labelledby="h2-sobre-mi">
+        <div class="about-grid">
+            <div class="about-image-wrapper fade-in">
+                <div class="image-glass-frame">
+                    <img src="assets/about.png" alt="Consultorio de la Lic. Elva Schweizer en Rosario" class="about-image">
+                </div>
+                <blockquote class="floating-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Cada proceso terapéutico es único. Estoy aquí para acompañarte, sin juzgar, construyendo juntos el camino."</p>
+                    <cite>— Lic. Elva B. Schweizer</cite>
+                </blockquote>
+            </div>
+            <div class="about-content fade-in" style="transition-delay: 200ms;">
+                <h2 id="h2-sobre-mi">Sobre mí</h2>
+                <p>Soy psicóloga clínica y creo profundamente en el poder transformador de un vínculo terapéutico genuino.
+                    Mi trabajo está centrado en el <strong>aquí y ahora</strong>: en lo que sentís hoy, en lo que te pesa,
+                    en lo que querés cambiar. No hay fórmulas mágicas, pero sí hay un espacio seguro donde todo puede decirse.</p>
+                <p>Me formo permanentemente para acompañar a mis pacientes con las mejores herramientas disponibles, siempre
+                    desde la <strong>escucha activa</strong> y el respeto por la singularidad de cada persona. Trabajo tanto con
+                    adultos como con niños, en modalidad presencial desde mi consultorio en Rosario y a través de videoconsultas.</p>
+
+                <h3 class="about-subheading">¿Cómo trabajo?</h3>
+                <ul class="highlights">
+                    <li>
+                        <i class="fas fa-circle-dot"></i>
+                        <div><strong>Escucha activa y sin juicio:</strong> Tu historia merece ser escuchada con atención plena
+                            y total respeto. Cada sesión es un espacio de contención real.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-circle-dot"></i>
+                        <div><strong>Construcción conjunta:</strong> No trabajo para vos, trabajo con vos. Tus objetivos,
+                            tu ritmo, tu proceso. El cambio es tuyo.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-circle-dot"></i>
+                        <div><strong>Acompañamiento en crisis vitales:</strong> Transiciones difíciles, pérdidas, momentos de
+                            quiebre emocional. Estoy preparada para caminar esos momentos junto a vos.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-circle-dot"></i>
+                        <div><strong>Bienestar sostenible:</strong> El objetivo no es solo aliviar el malestar, sino construir
+                            recursos internos que te acompañen mucho más allá del consultorio.</div>
+                    </li>
+                </ul>
+
+                <h3 class="about-subheading mt-4">Formación y especialidades</h3>
+                <ul class="credentials-list">
+                    <li><i class="fas fa-bookmark"></i>
+                        <div><strong>Psicología Clínica:</strong> Atención de adultos y niños con enfoque humanista e integrativo.</div>
+                    </li>
+                    <li><i class="fas fa-bookmark"></i>
+                        <div><strong>Pericias Psicológicas:</strong> Evaluaciones e informes técnicos para ámbito judicial y legal.</div>
+                    </li>
+                    <li><i class="fas fa-bookmark"></i>
+                        <div><strong>Matrícula Provincial 3689</strong> — Colegio de Psicólogos, Rosario, Argentina.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Imagen destacada (texto) -->
+    <section class="container section-padding fade-in" style="text-align: center; padding-top: 0;">
+        <div class="image-glass-frame" style="display: inline-block;">
+            <img src="assets/texto.jpeg" alt="Frase o texto destacado" style="border-radius: 18px; max-width: 100%; height: auto;">
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="services container section-padding" id="especialidades" aria-labelledby="h2-especialidades">
+        <div class="section-header text-center fade-in">
+            <h2 id="h2-especialidades">Especialidades</h2>
+            <p>Un acompañamiento especializado en salud mental, orientado a tu bienestar integral.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card glass-card fade-up" style="transition-delay: 100ms;">
+                <div class="icon-wrapper"><i class="fas fa-brain"></i></div>
+                <h3>Psicología Clínica</h3>
+                <p>Atención psicológica individual para adultos y niños. Un espacio de escucha, reflexión y crecimiento personal adaptado a tus necesidades.</p>
+            </div>
+            <div class="service-card glass-card fade-up" style="transition-delay: 200ms;">
+                <div class="icon-wrapper"><i class="fas fa-scale-balanced"></i></div>
+                <h3>Pericias Psicológicas</h3>
+                <p>Evaluaciones e informes técnicos especializados para uso judicial, laboral o legal. Documentación rigurosa y profesional.</p>
+            </div>
+            <div class="service-card glass-card fade-up" style="transition-delay: 300ms;">
+                <div class="icon-wrapper"><i class="fas fa-child-reaching"></i></div>
+                <h3>Atención a Niños</h3>
+                <p>Acompañamiento terapéutico infantil con sensibilidad y formación específica. Un entorno seguro y contenedor para los más chicos.</p>
+            </div>
+            <div class="service-card glass-card fade-up" style="transition-delay: 400ms;">
+                <div class="icon-wrapper"><i class="fas fa-person-rays"></i></div>
+                <h3>Crisis Vitales</h3>
+                <p>Acompañamiento en momentos de quiebre: duelos, separaciones, cambios de vida. Herramientas concretas para atravesar las tormentas.</p>
+            </div>
+            <div class="service-card glass-card fade-up" style="transition-delay: 500ms;">
+                <div class="icon-wrapper"><i class="fas fa-video"></i></div>
+                <h3>Videoconsultas Online</h3>
+                <p>Terapia desde la comodidad de tu hogar o desde donde estés. Misma calidad, misma calidez, total privacidad.</p>
+            </div>
+            <div class="service-card glass-card fade-up" style="transition-delay: 600ms;">
+                <div class="icon-wrapper"><i class="fas fa-hands-holding-heart"></i></div>
+                <h3>Contención Emocional</h3>
+                <p>Espacio de alivio para el malestar emocional, la angustia y la ansiedad. Aprenderás a conocer y gestionar tus emociones con mayor calma.</p>
+            </div>
+        </div>
+        <div class="text-center mt-5 fade-in">
+            <button type="button" class="btn btn-secondary" onclick="openBookingModal()" id="cta-especialidades">
+                <i class="fas fa-calendar-plus"></i> Reservar una consulta
+            </button>
+        </div>
+    </section>
+
+    <!-- Problemas frecuentes -->
+    <section class="problems-section section-padding" id="problemas" aria-labelledby="h2-problemas">
+        <div class="container container-sm text-center fade-in">
+            <h2 id="h2-problemas">¿En qué puedo ayudarte?</h2>
+            <p class="subtitle-text">Consultás conmigo si estás atravesando alguna de estas situaciones o algo similar.</p>
+        </div>
+        <div class="container">
+            <div class="problems-grid">
+                <div class="problem-pill fade-up" style="transition-delay:50ms;"><i class="fas fa-wind"></i> Angustia</div>
+                <div class="problem-pill fade-up" style="transition-delay:100ms;"><i class="fas fa-cloud-rain"></i> Depresión</div>
+                <div class="problem-pill fade-up" style="transition-delay:150ms;"><i class="fas fa-heart-crack"></i> Baja autoestima</div>
+                <div class="problem-pill fade-up" style="transition-delay:200ms;"><i class="fas fa-ribbon"></i> Duelo</div>
+                <div class="problem-pill fade-up" style="transition-delay:250ms;"><i class="fas fa-bolt"></i> Ataques de pánico</div>
+                <div class="problem-pill fade-up" style="transition-delay:300ms;"><i class="fas fa-face-anxious-sweat"></i> Ansiedad</div>
+                <div class="problem-pill fade-up" style="transition-delay:350ms;"><i class="fas fa-arrows-spin"></i> Estrés crónico</div>
+                <div class="problem-pill fade-up" style="transition-delay:400ms;"><i class="fas fa-moon"></i> Insomnio emocional</div>
+                <div class="problem-pill fade-up" style="transition-delay:450ms;"><i class="fas fa-people-arrows"></i> Conflictos relacionales</div>
+                <div class="problem-pill fade-up" style="transition-delay:500ms;"><i class="fas fa-road-circle-exclamation"></i> Crisis vitales</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalidades de atención -->
+    <section class="info-section section-padding" id="modalidades" aria-labelledby="h2-modalidades">
+        <div class="container container-sm text-center fade-in">
+            <h2 id="h2-modalidades">Modalidades de atención</h2>
+            <p class="subtitle-text">Elegí la forma que mejor se adapte a tu vida. La calidad del acompañamiento es la misma en ambas modalidades.</p>
+            <div class="info-cards">
+                <div class="info-card glass-card fade-up" style="transition-delay:100ms;">
+                    <i class="fas fa-map-marker-alt info-icon"></i>
+                    <h3>Atención Presencial</h3>
+                    <ul class="unstyled-list location-list">
+                        <li>
+                            <span class="pin"></span>
+                            <div><strong>Consultorio:</strong> Av. Arijon 2050, Rosario 2000, Santa Fe, Argentina.</div>
+                        </li>
+                        <li>
+                            <span class="pin"></span>
+                            <div>Turnos con horario acordado previamente. Puntualidad y privacidad garantizadas.</div>
+                        </li>
+                        <li>
+                            <span class="pin"></span>
+                            <div>Adultos y niños. Atención particular únicamente.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="info-card glass-card fade-up" style="transition-delay:200ms;">
+                    <i class="fas fa-video info-icon"></i>
+                    <h3>Videoconsulta Online</h3>
+                    <ul class="unstyled-list location-list">
+                        <li>
+                            <span class="pin"></span>
+                            <div><strong>Plataforma:</strong> Google Meet, Zoom o WhatsApp Video. Sin instalaciones complejas.</div>
+                        </li>
+                        <li>
+                            <span class="pin"></span>
+                            <div>Desde cualquier lugar de Argentina o el exterior. Total flexibilidad horaria.</div>
+                        </li>
+                        <li>
+                            <span class="pin"></span>
+                            <div>Sesiones privadas y confidenciales. Mismo nivel de profesionalismo y calidez.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section class="pricing-section section-padding" id="precios" aria-labelledby="h2-precios">
+        <div class="container container-sm text-center">
+            <div class="fade-in">
+                <h2 id="h2-precios">Honorarios</h2>
+                <p class="subtitle-text">Los valores son orientativos y pueden variar. Consultar disponibilidad y honorarios actualizados al momento de la reserva.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card glass-card fade-up" style="transition-delay:100ms;">
+                    <div class="pricing-icon"><i class="fas fa-couch"></i></div>
+                    <h3>Consulta Presencial</h3>
+                    <div class="price-tag">desde <strong>$28.000</strong></div>
+                    <p class="price-desc">Por sesión individual. Consultorio en Rosario.</p>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Adultos y niños</li>
+                        <li><i class="fas fa-check"></i> Psicología clínica</li>
+                        <li><i class="fas fa-check"></i> Pericias psicológicas</li>
+                    </ul>
+                </div>
+                <div class="pricing-card glass-card fade-up pricing-featured" style="transition-delay:200ms;">
+                    <div class="pricing-badge">Disponible desde cualquier lugar</div>
+                    <div class="pricing-icon"><i class="fas fa-video"></i></div>
+                    <h3>Videoconsulta Online</h3>
+                    <div class="price-tag">desde <strong>$50.000</strong></div>
+                    <p class="price-desc">Por sesión online. Desde Argentina o el exterior.</p>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Adultos y niños</li>
+                        <li><i class="fas fa-check"></i> Total flexibilidad horaria</li>
+                        <li><i class="fas fa-check"></i> Meet / Zoom / WhatsApp</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="pricing-notice fade-in"><i class="fas fa-circle-info"></i> Trabaja únicamente de forma particular. No se trabaja con obras sociales ni prepagas.</p>
+            <div class="mt-5 fade-in">
+                <button type="button" class="btn btn-accent btn-giant" onclick="openBookingModal()" id="cta-precios">
+                    <i class="fas fa-calendar-check"></i> Solicitar consulta
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials container section-padding" id="testimonios" aria-labelledby="h2-testimonios">
+        <div class="section-header text-center fade-in">
+            <h2 id="h2-testimonios">Lo que dicen quienes confiaron en el proceso</h2>
+            <p>Palabras genuinas de pacientes que encontraron su camino con acompañamiento profesional y humano.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card glass-card fade-up" style="transition-delay: 100ms;">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>"Cada encuentro con Elva es una invitación a mirar hacia adentro con más ternura que juicio. Una profesional que escucha de verdad y acompaña con una profundidad que pocas veces encontré."</p>
+                <div class="author">
+                    <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="author-info">
+                        <strong>Tati Maradei</strong>
+                        <span>Paciente</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass-card fade-up" style="transition-delay: 200ms;">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>"Realmente, a diferencia de experiencias anteriores, con Elva siento que cada sesión tiene un sentido claro. Su forma de trabajar genera confianza desde el primer momento."</p>
+                <div class="author">
+                    <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="author-info">
+                        <strong>Sonia Rimbau</strong>
+                        <span>Paciente</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass-card fade-up" style="transition-delay: 300ms;">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>"La calidad humana de Elva hizo que espere con entusiasmo cada sesión. Nunca pensé que ir al psicólogo podría sentirse así de cálido y contenedor. La recomiendo con el corazón."</p>
+                <div class="author">
+                    <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="author-info">
+                        <strong>Lourdes T.</strong>
+                        <span>Paciente</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass-card fade-up" style="transition-delay: 400ms;">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>"Su acompañamiento es muy cálido y profesional. Se nota que le importa genuinamente el bienestar de sus pacientes. Me ayudó a atravesar un momento muy difícil con mucha fortaleza."</p>
+                <div class="author">
+                    <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="author-info">
+                        <strong>Jesica Solis</strong>
+                        <span>Paciente</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass-card fade-up" style="transition-delay: 500ms;">
+                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                <p>"Excelente profesional. Explica bien, se toma su tiempo y me ayudó mucho. Se nota su vocación y compromiso con cada paciente. Muy recomendable."</p>
+                <div class="author">
+                    <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="author-info">
+                        <strong>Gabriel</strong>
+                        <span>Paciente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact section-padding" id="contacto" aria-labelledby="h2-contacto">
+        <div class="container contact-container glass-card fade-in">
+            <div class="contact-content">
+                <h2 id="h2-contacto">¿Damos el primer paso juntos?</h2>
+                <p>Si sentís que es el momento de cuidarte, escribime o reservá tu turno. Te espero en mi consultorio de Rosario o nos conectamos por videollamada desde donde estés.</p>
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Av. Arijon 2050, Rosario 2000, Santa Fe</span>
+                    </div>
+                    <div class="contact-detail-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Mat. Provincial 3689 &middot; Atención particular</span>
+                    </div>
+                    <div class="contact-detail-item">
+                        <i class="fas fa-video"></i>
+                        <span>Videoconsultas disponibles desde cualquier lugar</span>
+                    </div>
+                </div>
+                <div class="cta-wrapper mt-5">
+                    <div class="btn-row">
+                        <button type="button" class="btn btn-accent btn-giant" onclick="openBookingModal()" id="cta-contacto">
+                            <i class="fas fa-calendar-check"></i> Reservar mi turno
+                        </button>
+                        <a href="https://wa.me/5493413689000" target="_blank" rel="noopener" class="btn btn-whatsapp btn-giant" id="cta-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                        </a>
+                    </div>
+                    <p class="microcopy">Respuesta a la brevedad &middot; Confidencialidad garantizada</p>
+                </div>
+            </div>
+            <div class="contact-map" style="min-height: 350px; border-radius: 16px; overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.7!2d-60.6505!3d-32.9468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab7d0a01af3b%3A0x0!2sAv.%20Arijon%202050%2C%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar"
+                    width="100%" height="100%" style="border:0; min-height: 350px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Consultorio Lic. Elva Schweizer en Rosario"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container text-center">
+            <p>&copy; 2026 Lic. Elva Beatriz Schweizer. Todos los derechos reservados.</p>
+            <p class="footer-links">
+                Matrícula Provincial: 3689 &nbsp;|&nbsp; Rosario, Santa Fe, Argentina &nbsp;|&nbsp; <a href="#">Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content glass-card stepper-modal">
+            <button type="button" class="close-modal" onclick="closeBookingModal()" aria-label="Cerrar"><i
+                    class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3 id="modal-title">Solicitar consulta</h3>
+                <p>Completá los pasos para agendar tu consulta con Elva.</p>
+            </div>
+            <div class="stepper-progress" role="list" aria-label="Pasos del formulario">
+                <div class="step active" data-step="1" role="listitem">1</div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2" role="listitem">2</div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3" role="listitem">3</div>
+                <div class="step-line"></div>
+                <div class="step" data-step="4" role="listitem">4</div>
+            </div>
+            <form id="bookingForm" class="booking-form stepper-form" novalidate>
+                <!-- Paso 1 -->
+                <div class="step-content active" id="step-1">
+                    <h4 class="step-title"><i class="fas fa-user"></i> Tus datos</h4>
+                    <div class="form-group">
+                        <label for="nombre_cliente">Nombre y Apellido *</label>
+                        <input type="text" id="nombre_cliente" name="nombre_cliente" required placeholder="Ej: Laura Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono_cliente">WhatsApp (con cód. de área) *</label>
+                        <input type="tel" id="telefono_cliente" name="telefono_cliente" required placeholder="Ej: +54 9 341 1234567">
+                    </div>
+                    <div class="form-group">
+                        <label for="email_cliente">Correo Electrónico *</label>
+                        <input type="email" id="email_cliente" name="email_cliente" placeholder="tucorreo@gmail.com" required>
+                    </div>
+                    <div class="form-actions mt-buttons">
+                        <button type="button" class="btn btn-accent w-100" onclick="nextStep(1)">Siguiente <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- Paso 2 -->
+                <div class="step-content" id="step-2">
+                    <h4 class="step-title"><i class="fas fa-list-ul"></i> Servicio y Modalidad</h4>
+                    <div class="form-group">
+                        <label for="servicio">Tipo de consulta *</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Seleccioná una opción</option>
+                            <option value="Consulta psicológica individual">Consulta psicológica individual</option>
+                            <option value="Consulta psicológica infantil (niños)">Consulta psicológica infantil (niños)</option>
+                            <option value="Peritaje psicológico">Peritaje psicológico</option>
+                            <option value="Primera consulta / Evaluación">Primera consulta / Evaluación</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalidad">Modalidad *</label>
+                        <select id="modalidad" name="modalidad" required>
+                            <option value="">Seleccioná una modalidad</option>
+                            <option value="Presencial">Presencial (Av. Arijon 2050, Rosario)</option>
+                            <option value="Online">Online (Meet / Zoom / WhatsApp)</option>
+                        </select>
+                    </div>
+                    <div class="form-actions mt-buttons flex-between">
+                        <button type="button" class="btn btn-outline btn-prev" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Atrás</button>
+                        <button type="button" class="btn btn-accent btn-next" onclick="nextStep(2)">Siguiente <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- Paso 3 -->
+                <div class="step-content" id="step-3">
+                    <h4 class="step-title"><i class="fas fa-calendar-day"></i> Fecha y Hora</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha_reserva">Día preferido *</label>
+                            <input type="date" id="fecha_reserva" name="fecha_reserva" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora_reserva">Horario disponible *</label>
+                            <select id="hora_reserva" name="hora_reserva" required disabled>
+                                <option value="">Primero seleccioná un día</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions mt-buttons flex-between">
+                        <button type="button" class="btn btn-outline btn-prev" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Atrás</button>
+                        <button type="button" class="btn btn-accent btn-next" onclick="nextStep(3)">Siguiente <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- Paso 4 -->
+                <div class="step-content" id="step-4">
+                    <h4 class="step-title"><i class="fas fa-comment-dots"></i> Detalles finales</h4>
+                    <div class="form-group">
+                        <label for="mensaje">Motivo de consulta (opcional)</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"
+                            placeholder="Contame brevemente qué estás buscando trabajar o qué te trajo hasta acá..."></textarea>
+                    </div>
+                    <div class="form-actions mt-buttons flex-between">
+                        <button type="button" class="btn btn-outline btn-prev" onclick="prevStep(4)"><i class="fas fa-arrow-left"></i> Atrás</button>
+                        <button type="submit" class="btn btn-accent btn-submit"><i class="fas fa-paper-plane"></i> Confirmar solicitud</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/5493415694268" target="_blank" rel="noopener" class="floating-whatsapp"
+        aria-label="Contactar a Elva por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
