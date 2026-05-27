@@ -12,15 +12,15 @@
     --bg-section: #F3EEE8;
     --bg-card: rgba(252, 248, 242, 0.88);
     --secondary: #EDE8E0;
-    --text-color: #4A4640;
-    --text-light: #8A7F75;
+    --text-color: #22201E;       /* Texto general más oscuro y visible */
+    --text-light: #5B534B;       /* Texto secundario más oscuro */
     --whatsapp: #25D366;
     --whatsapp-hover: #1EBE5A;
     --border-color: #DDD6CC;
-    --footer-bg: #2E4A42;
-    --footer-text: #C8D5D0;
-    --heading-color: #2E4A42;
-    --subheading-color: #4A6C60;
+    --footer-bg: #163023;
+    --footer-text: #E8EBEA;
+    --heading-color: #0F2218;    /* Títulos mucho más oscuros y llamativos */
+    --subheading-color: #254F3B; /* Subtítulos más contrastantes */
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'DM Sans', 'Inter', sans-serif;
     --radius-pill: 50px;
