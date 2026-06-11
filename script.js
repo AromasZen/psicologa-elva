@@ -156,17 +156,6 @@ if (bookingModal) {
     });
 }
 
-// ── Horarios por día de semana (hardcoded) ────────────
-// 0=Dom, 1=Lun, 2=Mar, 3=Mié, 4=Jue, 5=Vie, 6=Sáb
-// Formato: 'HH:MM'
-const SCHEDULE_BY_DAY = {
-    1: ['16:00','17:00','18:00','19:00'],               // Lunes: 16-20 (presencial)
-    2: ['10:00','11:00','12:00','14:00','15:00','16:00'],// Martes: 10-13 y 14-17 (virtual)
-    3: ['15:00','16:00','17:00'],                        // Miércoles: 15-18 (virtual)
-    4: ['10:00','11:00','12:00','13:00','14:00'],        // Jueves: 10-15 (presencial)
-    5: ['08:00','09:00','10:00','11:00','14:00','15:00','16:00','17:00'] // Viernes: 8-12 y 14-18 (virtual)
-};
-
 // Días con atención presencial
 const PRESENCIAL_DAYS = [1, 4]; // Lunes y Jueves
 
@@ -231,24 +220,20 @@ if (fechaReservaInput && horaReservaSelect) {
         horaReservaSelect.disabled = true;
 
         try {
-            // 1. Horarios configurados para este profesional en Supabase
+            // 1. Obtener los horarios configurados para este día de la semana
             const { data: horariosData, error: horariosError } = await supabaseClient
-                .from('aahorarios')
+                .from('aahorarios_dia')
                 .select('hora')
                 .eq('empresa_id', EMPRESA_ID)
+                .eq('dia_semana', dayOfWeek)
                 .order('hora', { ascending: true });
 
             if (horariosError) throw horariosError;
 
-            // Obtener todos los slots de la base de datos
             let slots = horariosData.map(h => h.hora.substring(0, 5));
 
-            // Filtrar los slots según los permitidos para este día de la semana
-            const allowedSlotsForDay = SCHEDULE_BY_DAY[dayOfWeek] || [];
-            slots = slots.filter(s => allowedSlotsForDay.includes(s));
-
             if (slots.length === 0) {
-                horaReservaSelect.innerHTML = '<option value="">Sin horarios para este día</option>';
+                horaReservaSelect.innerHTML = '<option value="">No hay turnos disponibles este día</option>';
                 horaReservaSelect.disabled = true;
                 return;
             }
